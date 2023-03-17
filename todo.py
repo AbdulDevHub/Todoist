@@ -9,14 +9,15 @@ root.title("To-Do List")
 root.geometry("500x500")
 
 # Create a font for the items in the list
-font = Font(family="Comic Sans MS", size=30, weight="bold")
+font = Font(family="Comic Sans MS", size=20, weight="bold")
 
 # Create a frame and a Listbox for the actual to do list and pack them accordingly
 frame = tk.Frame(root)
 frame.pack(pady=10)
-to_do_list = tk.Listbox(frame, font=font, bd=0, bg="SystemButtonFace", width=25, height=8, fg="#464646",
+to_do_list = tk.Listbox(frame, font=font, bd=0, bg="SystemButtonFace", width=35, height=12, fg="#464646",
                         highlightthickness=0, selectbackground="#a6a6a6", activestyle="none")
 to_do_list.pack(side=LEFT, fill=BOTH)
+
 
 # Create and add a scrollbar
 scrollBar = tk.Scrollbar(frame)
@@ -24,8 +25,26 @@ scrollBar.pack(side=RIGHT, fill=BOTH)
 to_do_list.config(yscrollcommand=scrollBar.set)
 scrollBar.config(command=to_do_list.yview)
 
+
 # Create an entry box for the input
 entryBox = tk.Entry(root, width=50)
+entryBox.insert(0, "Insert task, be sure to keep it under 30 characters")
+
+
+# Create commands for the entry box
+def on_entry_click(event):
+    if entryBox.get() == "Insert task, be sure to keep it under 30 characters":
+        entryBox.delete(0, tk.END)
+        entryBox.insert(0, '')
+
+
+def on_focusout(event):
+    if entryBox.get() == '':
+        entryBox.insert(0, "Insert task, be sure to keep it under 30 characters")
+
+
+entryBox.bind('<FocusIn>', on_entry_click)
+entryBox.bind('<FocusOut>', on_focusout)
 entryBox.pack(pady=5)
 
 
@@ -43,10 +62,11 @@ def add_item():
     curr_date = datetime.datetime.now()
     date_string = curr_date.strftime("%d-%m")
     item = entryBox.get()
+    num_spaces = " " * (30 - len(item))
     if num < 10:
-        entry = "0" + str(num) + "- " + item + "     " + date_string
+        entry = "0" + str(num) + "- " + item + num_spaces + date_string
     else:
-        entry = str(num) + "- " + item + "     " + date_string
+        entry = str(num) + "- " + item + num_spaces + date_string
     if item:
         to_do_list.insert(tk.END, entry)
     num += 1
