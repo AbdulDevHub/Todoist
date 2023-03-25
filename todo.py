@@ -100,6 +100,14 @@ def add_item():
     num += 1
 
 
+def prioritize_item():
+    selection = to_do_list.curselection()
+    if selection:
+        index = selection[0]
+        to_do_list.itemconfig(index, {'bg': 'red'})
+        to_do_list.selection_clear(0, END)
+
+
 def remove_item():
     selection = to_do_list.curselection()
     if selection:
@@ -124,11 +132,13 @@ def remove_item():
 add_button = tk.Button(buttonFrame, text="Add Item", command=add_item)
 delete_button = tk.Button(buttonFrame, text="Delete Item", command=remove_item)
 check_button = tk.Button(buttonFrame, text="Check Item Off")
+prioritize_button = tk.Button(buttonFrame, text="Prioritize", command=prioritize_item)
 
 # Configure the layout of the buttons
 add_button.grid(row=0, column=0)
 delete_button.grid(row=0, column=1)
 check_button.grid(row=0, column=2)
+prioritize_button.grid(row=0, column=3)
 
 # Keep a copy of all items in the to do list
 original_items = []
