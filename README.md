@@ -1,5 +1,9 @@
 # Task Management Application
 
+<img height="400" src="https://github.com/AbdulDevHub/Tkinter-To-Do-List/blob/main/Example%20View%201.PNG?raw=true">
+<img height="400" src="https://github.com/AbdulDevHub/Tkinter-To-Do-List/blob/main/Example%20View%202.PNG?raw=true">
+<img height="400" src="https://github.com/AbdulDevHub/Tkinter-To-Do-List/blob/main/Example%20View%203.PNG?raw=true">
+
 ## Overview
 
 This repository contains the code for a task management application implemented in Python. The application uses the Tkinter, Pickle, Json, and Matplotlib modules to allow the user to create, edit, save, retrieve, and delete tasks. It also allows users to set reminders and to track their task creation, editing, and deletion by displaying it as a graph.
