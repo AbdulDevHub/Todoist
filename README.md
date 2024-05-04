@@ -1,8 +1,10 @@
 # Task Management Application
 
-<img height="400" src="https://github.com/AbdulDevHub/Tkinter-To-Do-List/blob/main/Example%20View%201.PNG?raw=true">
-<img height="400" src="https://github.com/AbdulDevHub/Tkinter-To-Do-List/blob/main/Example%20View%202.PNG?raw=true">
-<img height="400" src="https://github.com/AbdulDevHub/Tkinter-To-Do-List/blob/main/Example%20View%203.PNG?raw=true">
+<div style="display=flex">
+  <img height="250" src="https://github.com/AbdulDevHub/Tkinter-To-Do-List/blob/main/Example%20View%201.PNG?raw=true">
+  <img height="250" src="https://github.com/AbdulDevHub/Tkinter-To-Do-List/blob/main/Example%20View%202.PNG?raw=true">
+  <img height="250" src="https://github.com/AbdulDevHub/Tkinter-To-Do-List/blob/main/Example%20View%203.PNG?raw=true">
+</div>
 
 ## Overview
 
